@@ -1,0 +1,60 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar [class.show-background]="showToolbar" [class.show-background2]="showToolbarAgain">
+
+    <ion-title>Katalis Photo</ion-title>
+    <ion-buttons slot="end" style="margin-right: 16px;" (click)="presentLogout()">
+      <ion-icon style="zoom: 1.1;" name="exit-outline">
+        <ion-badge color="warning"></ion-badge>
+      </ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <!-- <ion-item>
+    <ion-label>Nama sekolah</ion-label>
+    <ion-select  [(ngModel)]="input.namaSekolah" (ionChange)="GET_DATA_MEMBER($event)" name="class">
+      <ion-select-option [value]="item.id_" *ngFor="let item of datapelanggan" >{{item.perusahaanName}}</ion-select-option>  
+    </ion-select>
+  </ion-item>   
+  <ion-searchbar (ionInput)="GET_DATA_MEMBER($event)"></ion-searchbar>-->
+  <ion-searchbar [(ngModel)]="searchQuery" (input)="getItems($event)"></ion-searchbar>
+   
+    
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <div class=“feed_post_photo”>
+  <ion-item *ngFor="let member of allMember">
+        <ion-avatar slot="start" class="avatar" (click)="presentActionSheet(member)" > 
+          <img  [src]="getImgContent(member.photoUrl)" >
+        </ion-avatar>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+             {{member.name}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              {{member.number}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              {{member.dateOfBirth}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              {{member.photoUrl}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>   
+    </div>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-content>

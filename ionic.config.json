@@ -1,0 +1,8 @@
+{
+  "name": "photos",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "4d2ec836"
+}

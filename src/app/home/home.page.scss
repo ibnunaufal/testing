@@ -1,0 +1,46 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+.avatar {
+  float: left;
+  height: 100px;
+
+  width: 100px;
+  }
+  .feed_post_photo_img{
+    border: 1px solid #07e5d8;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #000;
+    height: 100%;
+    width: 100%;
+    }
+.cardView {
+  float: left;
+  height:170px;
+  // margin: 30px;
+  width: 170px;
+}

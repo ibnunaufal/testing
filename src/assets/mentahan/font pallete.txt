@@ -1,0 +1,14 @@
+
+Font 
+montserat 
+-Regular
+-medium
+
+font lain
+roboto
+-regular
+-medium
+
+Pallete
+#017CFD biru
+#F2F8FF putih kebiruan

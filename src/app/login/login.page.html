@@ -1,0 +1,42 @@
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col><br />
+        <img  src="../../assets/lgapk.png" width="30%" /><br /><br />
+        <img  src="../../assets/lg1.png" width="80%" /><br /><br />
+       </ion-col>
+    </ion-row>
+  </ion-grid>
+  <form [formGroup]="FormLogin" (ngSubmit)="login()">
+    <ion-item>
+      <div color="dark"  slot="start">
+        <ion-icon slot="icon-only" name="person" ></ion-icon>
+    </div>
+      <ion-input type="text" name="username" placeholder="Username" formControlName="username"></ion-input>
+    </ion-item>  
+    <ion-item>
+      <div color="dark"  slot="start">
+        <ion-icon slot="icon-only" name="lock-closed"></ion-icon>
+    </div>
+      <ion-input type="text" name="password" placeholder="Password" formControlName="password" *ngIf="showPasswordText"></ion-input>
+      <ion-input type="password" name="password" placeholder="Password"  formControlName="password" *ngIf="!showPasswordText"></ion-input>
+      <ion-icon color="dark" slot="icon-only" (click)="showPasswordText = !showPasswordText" *ngIf="showPasswordText" name="eye"  slot="end" class="ion-align-self-center"></ion-icon>
+      <ion-icon color="dark" slot="icon-only" (click)="showPasswordText = !showPasswordText" *ngIf="!showPasswordText" name="eye-off" slot="end" class="ion-align-self-center"></ion-icon>
+    </ion-item>
+   
+    <ion-button type="submit"  expand="block" color="primary" [disabled]="!FormLogin.valid">Login</ion-button>
+  </form>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col><br />
+        <p class="text-bottom">Didukung oleh :</p>
+        <img  src="../../assets/bsi.svg" width="20%" /><br /><br />
+       
+       </ion-col>
+    </ion-row>
+  </ion-grid>
+
+ 
+ 
+</ion-content>  
